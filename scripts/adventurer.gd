@@ -11,13 +11,14 @@ extends Node
 var names = ["Alice", "Bob", "Clark", "Dan"]
 var classes = ["Fighter", "Rogue", "Cleric", "Wizard"]
 var races = ["Human", "Elf", "Dwarf", "Orc"]
+var default_icon = preload("res://icon.svg")
 
 func _init() -> void:
 	adv_name = names.pick_random()
 	adv_class = classes.pick_random()
 	race = races.pick_random()
 	level = 1
-	icon = load("res://icon.svg")
+	icon = default_icon
 
 func recruit_adventurer(name:String) -> void:
 	var adv = {

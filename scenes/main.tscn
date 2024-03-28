@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://db2u702i46ga5"]
+[gd_scene load_steps=6 format=3 uid="uid://db2u702i46ga5"]
 
 [ext_resource type="Script" path="res://scripts/roster_rows_container.gd" id="1_yd368"]
 [ext_resource type="Script" path="res://scripts/adventurer_manager.gd" id="2_r1xka"]
 [ext_resource type="PackedScene" uid="uid://csu5kxgn0bp1a" path="res://scenes/embark_adv_slot.tscn" id="2_vqvbt"]
-[ext_resource type="PackedScene" uid="uid://c7bguwmg8m85" path="res://scenes/dungeon.tscn" id="4_jtvbv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a13an"]
 bg_color = Color(0.2, 0.2, 0.2, 1)
@@ -99,13 +98,5 @@ color = Color(0.1, 0.1, 0.1, 1)
 
 [node name="AdventurerManager" type="Node" parent="."]
 script = ExtResource("2_r1xka")
-
-[node name="Dungeon" parent="." instance=ExtResource("4_jtvbv")]
-
-[node name="EmbarkAdvSlot" parent="." instance=ExtResource("2_vqvbt")]
-offset_left = 365.0
-offset_top = 264.0
-offset_right = 413.0
-offset_bottom = 312.0
 
 [connection signal="button_down" from="UI/RecruitButton" to="AdventurerManager" method="_on_recruit_button_button_down"]
