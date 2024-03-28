@@ -6,6 +6,7 @@ extends Node
 @export var adv_class: String
 @export var level: int
 @export var race: String
+@export var icon: Texture2D
 
 var names = ["Alice", "Bob", "Clark", "Dan"]
 var classes = ["Fighter", "Rogue", "Cleric", "Wizard"]
@@ -16,6 +17,7 @@ func _init() -> void:
 	adv_class = classes.pick_random()
 	race = races.pick_random()
 	level = 1
+	icon = load("res://icon.svg")
 
 func recruit_adventurer(name:String) -> void:
 	var adv = {

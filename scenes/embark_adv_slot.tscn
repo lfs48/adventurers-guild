@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://csu5kxgn0bp1a"]
+
+[ext_resource type="Script" path="res://scripts/embark_adv_slot.gd" id="1_dav26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmtk6"]
+
+[node name="EmbarkAdvSlot" type="TextureRect"]
+custom_minimum_size = Vector2(48, 48)
+expand_mode = 1
+script = ExtResource("1_dav26")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_jmtk6")
