@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://scripts/adventurer_manager.gd" id="2_r1xka"]
 [ext_resource type="PackedScene" uid="uid://csu5kxgn0bp1a" path="res://scenes/embark_adv_slot.tscn" id="2_vqvbt"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a13an"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00cg3"]
 bg_color = Color(0.2, 0.2, 0.2, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00cg3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a13an"]
 bg_color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Game" type="Node"]
@@ -25,31 +25,6 @@ offset_top = 0.263977
 offset_right = -42.7761
 offset_bottom = -19.0
 text = "Recruit"
-
-[node name="RosterPanel" type="PanelContainer" parent="UI"]
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -253.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_a13an")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/RosterPanel"]
-layout_mode = 2
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/RosterPanel/MarginContainer"]
-layout_mode = 2
-horizontal_scroll_mode = 0
-
-[node name="RosterRowsContainer" type="VBoxContainer" parent="UI/RosterPanel/MarginContainer/ScrollContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 12
-script = ExtResource("1_yd368")
 
 [node name="EmbarkPanel" type="PanelContainer" parent="UI"]
 anchors_preset = 7
@@ -87,6 +62,31 @@ layout_mode = 2
 
 [node name="EmbarkAdvSlot4" parent="UI/EmbarkPanel/MarginContainer/HBoxContainer" instance=ExtResource("2_vqvbt")]
 layout_mode = 2
+
+[node name="RosterPanel" type="PanelContainer" parent="UI"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -253.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a13an")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/RosterPanel"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/RosterPanel/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="RosterRowsContainer" type="VBoxContainer" parent="UI/RosterPanel/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+script = ExtResource("1_yd368")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
