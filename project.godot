@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Events="*res://scripts/events.gd"
-Drag="*res://scripts/drag.gd"
 
 [input]
 
