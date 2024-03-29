@@ -37,7 +37,7 @@ func create_drag_preview_control() -> Control:
 		texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		texture.size = Vector2(48,48)
 		texture.position = Vector2(-24,-24)
-		
 		var control = Control.new()
 		control.add_child(texture)
+		control.z_index = 10
 		return control
