@@ -1,6 +1,25 @@
 class_name EmbarkAdvSlot
-
 extends TextureRect
+
+var adv:Adventurer
+
+func _get_drag_data(at_position: Vector2) -> Variant:
+	if adv != null:
+		var preview = adv.create_drag_preview_control()
+		set_drag_preview(preview)
+		
+		var res = {
+			"adv": adv,
+			"callback": end_drag
+		}
+		return res
+	else:
+		return null
+
+
+func end_drag() -> void:
+	adv = null
+	texture = null
 
 
 func _can_drop_data(_pos, data:Variant) -> bool:
@@ -8,6 +27,7 @@ func _can_drop_data(_pos, data:Variant) -> bool:
 
 
 func _drop_data(_pos, data:Variant) -> void:
+	adv = data.adv
 	texture = data.adv.icon
 	data.callback.call()
 

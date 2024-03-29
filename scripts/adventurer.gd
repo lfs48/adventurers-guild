@@ -20,6 +20,7 @@ func _init() -> void:
 	level = 1
 	icon = default_icon
 
+
 func recruit_adventurer(name:String) -> void:
 	var adv = {
 		"adv_name": adv_name,
@@ -27,3 +28,16 @@ func recruit_adventurer(name:String) -> void:
 		"level": level,
 		"race": race
 	}
+
+
+func create_drag_preview_control() -> Control:
+		var texture = TextureRect.new()
+		texture.texture = icon
+		texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		texture.size = Vector2(48,48)
+		texture.position = Vector2(-24,-24)
+		
+		var control = Control.new()
+		control.add_child(texture)
+		return control
