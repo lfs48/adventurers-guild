@@ -64,19 +64,18 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="RosterPanel" type="PanelContainer" parent="UI"]
+custom_minimum_size = Vector2(240, 0)
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -253.0
+offset_left = -240.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_a13an")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/RosterPanel"]
 layout_mode = 2
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_bottom = 20
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/RosterPanel/MarginContainer"]
 layout_mode = 2
@@ -85,7 +84,7 @@ horizontal_scroll_mode = 0
 [node name="RosterRowsContainer" type="VBoxContainer" parent="UI/RosterPanel/MarginContainer/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 0
 script = ExtResource("1_yd368")
 
 [node name="ColorRect" type="ColorRect" parent="."]
