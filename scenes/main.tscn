@@ -1,11 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://db2u702i46ga5"]
 
+[ext_resource type="PackedScene" uid="uid://bkd55rr1tn6h7" path="res://scenes/embark_panel.tscn" id="1_0sq42"]
 [ext_resource type="Script" path="res://scripts/roster_rows_container.gd" id="1_yd368"]
 [ext_resource type="Script" path="res://scripts/adventurer_manager.gd" id="2_r1xka"]
-[ext_resource type="PackedScene" uid="uid://csu5kxgn0bp1a" path="res://scenes/embark_adv_slot.tscn" id="2_vqvbt"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00cg3"]
-bg_color = Color(0.2, 0.2, 0.2, 1)
+[ext_resource type="PackedScene" uid="uid://c7bguwmg8m85" path="res://scenes/dungeon.tscn" id="4_jtvbv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a13an"]
 bg_color = Color(0.2, 0.2, 0.2, 1)
@@ -13,6 +11,7 @@ bg_color = Color(0.2, 0.2, 0.2, 1)
 [node name="Game" type="Node"]
 
 [node name="UI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 
 [node name="RecruitButton" type="Button" parent="UI"]
 anchors_preset = -1
@@ -25,43 +24,6 @@ offset_top = 0.263977
 offset_right = -42.7761
 offset_bottom = -19.0
 text = "Recruit"
-
-[node name="EmbarkPanel" type="PanelContainer" parent="UI"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -138.0
-offset_top = -72.0
-offset_right = 138.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_00cg3")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/EmbarkPanel"]
-layout_mode = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 12
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/EmbarkPanel/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 12
-
-[node name="EmbarkAdvSlot" parent="UI/EmbarkPanel/MarginContainer/HBoxContainer" instance=ExtResource("2_vqvbt")]
-layout_mode = 2
-
-[node name="EmbarkAdvSlot2" parent="UI/EmbarkPanel/MarginContainer/HBoxContainer" instance=ExtResource("2_vqvbt")]
-layout_mode = 2
-
-[node name="EmbarkAdvSlot3" parent="UI/EmbarkPanel/MarginContainer/HBoxContainer" instance=ExtResource("2_vqvbt")]
-layout_mode = 2
-
-[node name="EmbarkAdvSlot4" parent="UI/EmbarkPanel/MarginContainer/HBoxContainer" instance=ExtResource("2_vqvbt")]
-layout_mode = 2
 
 [node name="RosterPanel" type="PanelContainer" parent="UI"]
 custom_minimum_size = Vector2(240, 0)
@@ -87,6 +49,8 @@ layout_mode = 2
 theme_override_constants/separation = 0
 script = ExtResource("1_yd368")
 
+[node name="EmbarkPanel" parent="UI" instance=ExtResource("1_0sq42")]
+
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,5 +61,19 @@ color = Color(0.1, 0.1, 0.1, 1)
 
 [node name="AdventurerManager" type="Node" parent="."]
 script = ExtResource("2_r1xka")
+
+[node name="Dungeon" parent="." instance=ExtResource("4_jtvbv")]
+offset_left = 216.0
+offset_top = 192.0
+offset_right = 346.0
+offset_bottom = 322.0
+dgn_name = "Spooky Woods"
+
+[node name="Dungeon2" parent="." instance=ExtResource("4_jtvbv")]
+offset_left = 624.0
+offset_top = 224.0
+offset_right = 754.0
+offset_bottom = 354.0
+dgn_name = "Creepy Cave"
 
 [connection signal="button_down" from="UI/RecruitButton" to="AdventurerManager" method="_on_recruit_button_button_down"]

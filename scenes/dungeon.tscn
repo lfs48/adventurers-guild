@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7bguwmg8m85"]
+
+[ext_resource type="Script" path="res://scripts/dungeon.gd" id="1_1hald"]
+[ext_resource type="Texture2D" uid="uid://oh10cx1dpoi0" path="res://icon.svg" id="1_a68mo"]
+
+[node name="Dungeon" type="Control"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1hald")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(65, 65)
+texture = ExtResource("1_a68mo")
+
+[node name="DungeonButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true

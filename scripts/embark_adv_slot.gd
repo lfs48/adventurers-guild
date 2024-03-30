@@ -18,8 +18,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 
 
 func end_drag() -> void:
-	adv = null
-	texture = null
+	clear_adv()
 
 
 func _can_drop_data(_pos, data:Variant) -> bool:
@@ -41,3 +40,8 @@ func is_valid_drop_data(data:Variant) -> bool:
 		)
 	else:
 		return false
+
+
+func clear_adv() -> void:
+	adv = null
+	texture = null
