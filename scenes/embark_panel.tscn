@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkd55rr1tn6h7"]
 
-[ext_resource type="Script" path="res://scenes/embark_panel.gd" id="1_a7wyw"]
+[ext_resource type="Script" path="res://scripts/embark_panel.gd" id="1_a7wyw"]
 [ext_resource type="PackedScene" uid="uid://csu5kxgn0bp1a" path="res://scenes/embark_adv_slot.tscn" id="1_gcijd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00cg3"]

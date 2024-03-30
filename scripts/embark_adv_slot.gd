@@ -5,43 +5,31 @@ var adv:Adventurer
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	if adv != null:
+		var temp_adv = adv
 		var preview = adv.create_drag_preview_control()
 		set_drag_preview(preview)
-		
-		var res = {
-			"adv": adv,
-			"callback": end_drag
-		}
-		return res
+		clear_adv()
+		return temp_adv
 	else:
 		return null
 
 
-func end_drag() -> void:
-	clear_adv()
-
-
 func _can_drop_data(_pos, data:Variant) -> bool:
-	return is_valid_drop_data(data)
+	return data is Adventurer
 
 
 func _drop_data(_pos, data:Variant) -> void:
-	adv = data.adv
-	texture = data.adv.icon
-	data.callback.call()
+	receive_adv(data)
 
 
-func is_valid_drop_data(data:Variant) -> bool:
-	if data is Dictionary:
-		return (
-			data.has_all(["adv", "callback"]) 
-			and data.adv is Adventurer 
-			and data.callback is Callable
-		)
-	else:
-		return false
+func receive_adv(adv:Adventurer) -> void:
+	self.adv = adv
+	texture = adv.icon
+	Events.adventurer_occupied.emit(adv.adv_id)
 
 
 func clear_adv() -> void:
-	adv = null
-	texture = null
+	if adv != null:
+		Events.adventurer_unoccupied.emit(adv.adv_id)
+		adv = null
+		texture = null

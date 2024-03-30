@@ -6,10 +6,12 @@ signal adventurer_added
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	adventurers.resize(20)
+	pass
+
 
 func _on_recruit_button_button_down() -> void:
-	var new_adventurer = Adventurer.new()
+	var id = adventurers.size()
+	var new_adventurer = Adventurer.new(id)
 	recruit(new_adventurer)
 
 func recruit(adventurer: Adventurer) -> void:
