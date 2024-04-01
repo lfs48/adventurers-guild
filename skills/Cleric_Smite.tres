@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://gfl5hp0niy4a"]
+
+[ext_resource type="Texture2D" uid="uid://oh10cx1dpoi0" path="res://icon.svg" id="1_d83ns"]
+[ext_resource type="Script" path="res://skills/skill.gd" id="2_oecpu"]
+
+[resource]
+script = ExtResource("2_oecpu")
+name = "Smite"
+description = "Skill Description"
+icon = ExtResource("1_d83ns")
+tags = Array[int]([5])

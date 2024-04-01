@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkd55rr1tn6h7"]
 
-[ext_resource type="Script" path="res://scripts/embark_panel.gd" id="1_a7wyw"]
+[ext_resource type="Script" path="res://scripts/embark_panel.gd" id="1_4qd07"]
 [ext_resource type="PackedScene" uid="uid://csu5kxgn0bp1a" path="res://scenes/embark_adv_slot.tscn" id="1_gcijd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00cg3"]
@@ -18,7 +18,7 @@ offset_right = 138.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_00cg3")
-script = ExtResource("1_a7wyw")
+script = ExtResource("1_4qd07")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

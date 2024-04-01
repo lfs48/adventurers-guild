@@ -2,7 +2,7 @@ class_name Dungeon
 extends Control
 
 @export var dgn_name := "Dungeon Name"
-
+@export var challenges: Array[Challenge] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

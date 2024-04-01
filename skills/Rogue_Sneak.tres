@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://wh6x7y7mkaqd"]
+
+[ext_resource type="Texture2D" uid="uid://oh10cx1dpoi0" path="res://icon.svg" id="1_ugseb"]
+[ext_resource type="Script" path="res://skills/skill.gd" id="2_jupf7"]
+
+[resource]
+script = ExtResource("2_jupf7")
+name = "Stealth"
+description = "Skill Description"
+icon = ExtResource("1_ugseb")
+tags = Array[int]([6])

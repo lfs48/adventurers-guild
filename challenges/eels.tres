@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Challenge" load_steps=3 format=3 uid="uid://dv4qj47yfo78y"]
+
+[ext_resource type="Script" path="res://challenges/challenge.gd" id="1_0do4t"]
+[ext_resource type="Texture2D" uid="uid://oh10cx1dpoi0" path="res://icon.svg" id="1_owe1p"]
+
+[resource]
+script = ExtResource("1_0do4t")
+name = "Pack of Wolves"
+description = "Challenge Description"
+icon = ExtResource("1_owe1p")
+rating = 2
+tags = Array[int]([0, 2])

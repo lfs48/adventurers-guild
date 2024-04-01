@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://dh8eygjly3aer"]
+
+[ext_resource type="Texture2D" uid="uid://oh10cx1dpoi0" path="res://icon.svg" id="1_vf76h"]
+[ext_resource type="Script" path="res://skills/skill.gd" id="2_wewlr"]
+
+[resource]
+script = ExtResource("2_wewlr")
+name = "Stamina"
+description = "Skill Description"
+icon = ExtResource("1_vf76h")
+tags = Array[int]([4])
